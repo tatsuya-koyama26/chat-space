@@ -27,7 +27,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|mail|string|null: false, unique: true|
 
 ### Association
 - has_many :groups, through: :group_users
@@ -38,7 +37,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |image|string||
 |group_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
