@@ -1,50 +1,42 @@
-<!DOCTYPE html>
-%html
-  %head
-  %body
-    .flash-box
-
-    .wrapper
-      .chat-side
-        .side-header
-          .side-header__box
-            %p.side-header__box__user-name test
-            %ul.side-header__box__menu
-              %li.side-header__box__menu__new-group
-                %a{href: "/groups/new"}
-                  %i.fa.fa-edit
-
-              %li.side-header__box__menu__edit-user">
-                %a{href: "/users/467/edit"}
-                  %i.fa.fa-cog
-        .groups
-          %a{href: "/groups/941/messages"}
-            .group
-              %p.group__group-name test
-              %p.group__latest-message test
-
-      .chat-main
-        .main-header
-          .main-header__left-box
-            %h2.main-header__left-box__current-group test
-            %ul.main-header__left-box__member-list
-              Member：
-              %li.main-header__left-box__member-list__member test
-          %a{href: "/groups/current_id/edit"}
-            .main-header__edit-btn Edit
-        .messages
-          .message
-            .message__upper-info
-              %p.message__upper-info__talker test
-              %p.message__upper-info__date 2019/05/16(Thu) 00:02:14
-            %p.message__text test
-          .form
-            %form.new_message#new_message{enctype:"multipart/form-data", action: "/groups/941/messages", accept-charset: "UTF-8", method: "post"} 
-              %input{name:"utf8", type:"hidden", value:"✓"}
-              %input{type: "hidden", name: "authenticity_token", value:"fcDtVZJWf9oCedJlPl4LuZ3Hz/lUPEjDjkWHGPiKtfPaaSuH0RXj+Fd7j1YRq5lXy426ph7jVq4N7/DgCrHraQ=="}
-              .input-box
-                %input{placeholder: "type a message", class: "input-box__text", type: "text" name: "message[content]" id: "message_content"}
-                %label{.input-box__image, for: "message_image"}
-                  %i.fa.fa-image
-                  %input{.input-box__image__file, type: "file", name: "message[image]", id: "message_image"}
-              %input{type: "submit", name: "commit", value: "Send" class: "submit-btn", data-disable-with: "Send"}
+.chatspace
+  .chat-side
+    .chat-user
+      .chat-user__name
+        %h5
+      .chat-user__action
+        .chat-user__action__group
+        
+          %i.fa.fa-cog
+        .chat-user__action__user
+        
+          %i.fa.fa-pencil-square-o
+    .chat-group
+      .chat-group__name
+        %p test
+      .chat-group__message
+        %p test
+  .chat-main
+    .chat-header
+      .chat-header__left
+        %h2.group test
+        %p.user Members: test
+      .chat-header__right
+        %a.edit-btn Edit
+    .chat-body
+      %ul.chat-contents
+        %li.chat-content
+          .chat-content__header
+            .chat-content__name
+              %p test
+            .chat-content__time
+              %p test
+          .chat-content__message
+            %p test
+    .chat-footer
+      .chat-footer__messagebody
+        .chat-footer__messagebody__text
+          %textarea{ placeholder: 'type a message' }
+        .chat-footer__messagebody__image
+          %i.fa.fa-picture-o
+      .chat-footer__send
+        %a.send-btn Send
