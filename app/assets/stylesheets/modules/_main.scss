@@ -1,24 +1,29 @@
+.chatspace {
+  min-width: 980px;
+  height: 100%;
+}
 .chat-main {
   position: relative;
-  height: 100%;
+  height: 100vh;
   width: calc(100% - 300px);
   display: inline-block;
   background-color: white;
 }
 .main-header {
-  height: 82px;
+  height: 100px;
   padding-right: 40px;
   padding-left: 40px;
   background-color: white;
   border-bottom: 1px solid gray;
   &__left-box {
-    padding-top: 35px;
-    padding-bottom: 15px;
+    padding-top: 30px;
+    padding-bottom: 10px;
     display: inline-block;
     .group {
       font-size: 20px;
       color: black;
       letter-spacing: 2px;
+      padding-bottom: 10px;
     }
     .user {
       font-size: 12px;
@@ -42,7 +47,7 @@
 }
 .chat-body {
   position: relative;
-  height: calc(100% - 82px);
+  height: calc(100vh - 190px);
   overflow-y: scroll;
 }
 .chat-contents {
@@ -75,13 +80,13 @@
   bottom: 0;
   left: 0;
   padding: 20px 40px;
-  background-color: white;
+  background-color: gray;
   &__messagebody {
     position: absolute;
     &__text {
       textarea {
         height: 50px;
-        width: calc(100% - 150px);
+        width: 500px;
         line-height: 50px;
         border: none;
         resize: none;
@@ -92,7 +97,7 @@
     }
     &__image {
       i {
-        right: 5px;
+        right: 10px;
         bottom: 15px;
         padding: 0 10px;
         background-color: white;
@@ -100,11 +105,17 @@
         line-height: 30px;
         position: absolute;
       }
+      .hidden{
+        display: none
+      }
     }
   }
   &__send {
     .send-btn {
+      float: right;
       display: inline-block;
+      padding-right: 30px;
+      padding-left: 30px;
       line-height: 50px;
       background-color: $light_blue;
       font-size: 16px;

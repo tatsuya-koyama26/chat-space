@@ -1,6 +1,5 @@
 @import "./reset";
 @import "./config/variables";
-/*
- *= require font-awesome
- */
- 
+@import "font-awesome";
+@import "./modules/_main.scss";
+@import "./modules/_side.scss";
