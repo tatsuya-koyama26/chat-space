@@ -1,0 +1,43 @@
+.chatspace  
+  .chat-side
+    .chat-user
+      .chat-user__name
+        %h5 test
+      .chat-user__action
+        .chat-user__action__group
+          = link_to "/" do
+            %i.fa.fa-cog
+            .chat-user__action__user
+              = link_to "/" do
+                %i.fa.fa-pencil-square
+    .chat-group
+      .chat-group__name
+        %p test
+      .chat-group__message
+        %p test
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.group test
+        %p.user Members: test
+      .main-header__right
+        %a.edit-btn Edit
+    .chat-body
+      %ul.chat-contents
+        %li.chat-content
+          .chat-content__name
+            %p test
+          .chat-content__time
+            %p test
+          .chat-content__message
+            %p test
+    .chat-footer
+      .chat-footer__messagebody
+        .chat-footer__messagebody__text
+          %textarea{ placeholder: 'type a message' }
+        .chat-footer__messagebody__image
+          %label
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+      .chat-footer__send
+        %a.send-btn Send

@@ -1,0 +1,126 @@
+.chatspace {
+  min-width: 980px;
+  height: 100%;
+}
+.chat-main {
+  position: relative;
+  height: 100vh;
+  width: calc(100% - 300px);
+  display: inline-block;
+  background-color: white;
+}
+.main-header {
+  height: 100px;
+  padding-right: 40px;
+  padding-left: 40px;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  &__left-box {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    display: inline-block;
+    .group {
+      font-size: 20px;
+      color: black;
+      letter-spacing: 2px;
+      padding-bottom: 10px;
+    }
+    .user {
+      font-size: 12px;
+      line-height: 20px;
+      color: gray;
+    }
+  }
+  &__right {
+    float: right;
+    .edit-btn {
+      display: inline-block;
+      margin: 28px 0;
+      padding: 0 20px;
+      line-height: 40px;
+      color: $light_blue;
+      font-size: 14px;
+      border: 2px solid;
+      text-align: center;
+    }
+  }
+}
+.chat-body {
+  position: relative;
+  height: calc(100vh - 190px);
+  overflow-y: scroll;
+}
+.chat-contents {
+  position: absolute;
+  right: 40px;
+  left: 40px;
+  padding: 0;
+  list-style: none;
+}
+.chat-content {
+  margin-bottom: 40px;
+  &__name {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  &__time {
+    display: inline-block;
+    margin-left: 10px;
+    color: #999999;
+    font-size: 12px;
+  }
+  &__message {
+    font-size: 14px;
+  }
+}
+.chat-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px 40px;
+  background-color: gray;
+  &__messagebody {
+    position: absolute;
+    &__text {
+      textarea {
+        height: 50px;
+        width: 500px;
+        line-height: 50px;
+        border: none;
+        resize: none;
+        background-color: white;
+        box-sizing: border-box;
+        padding-left: 10px;
+      }
+    }
+    &__image {
+      i {
+        right: 10px;
+        bottom: 15px;
+        padding: 0 10px;
+        background-color: white;
+        box-sizing: border-box;
+        line-height: 30px;
+        position: absolute;
+      }
+      .hidden{
+        display: none
+      }
+    }
+  }
+  &__send {
+    .send-btn {
+      float: right;
+      display: inline-block;
+      padding-right: 30px;
+      padding-left: 30px;
+      line-height: 50px;
+      background-color: $light_blue;
+      font-size: 16px;
+      text-align: center;
+      color: white;
+    }
+  }
+}
