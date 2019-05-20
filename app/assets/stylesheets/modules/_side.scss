@@ -24,13 +24,8 @@
     float: right;
     padding-top: 15px;
     font-size: 20px;
-    &__group {
-      color: white;
-    }
-    &__user {
-      float: left;
-      color: white;
-      padding-right: 10px;
+    .list {
+      display: inline-block;
     }
   }
 }
