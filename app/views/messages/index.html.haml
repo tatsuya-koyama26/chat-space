@@ -12,11 +12,10 @@
       %ul.chat-contents
         %li.chat-content
           .chat-content__name
-            %p test
           .chat-content__time
-            %p test
           .chat-content__message
-            %p test
+    .messages
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
