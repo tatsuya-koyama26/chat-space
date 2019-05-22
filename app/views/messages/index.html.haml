@@ -19,11 +19,10 @@
             %p test
     .chat-footer
       .chat-footer__messagebody
-        .chat-footer__messagebody__text
-          %textarea{ placeholder: 'type a message' }
-        .chat-footer__messagebody__image
-          %label
-            = fa_icon 'picture-o', class: 'icon'
-            %input.hidden{type: 'file'}
-      .chat-footer__send
-        %a.send-btn Send
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'chat-footer__messagebody__text', placeholder: 'type a message'
+            = f.label :image, class: 'chat-footer__messagebody__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+            .chat-footer__send
+              %a.send-btn Send
