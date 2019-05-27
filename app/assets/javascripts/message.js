@@ -39,5 +39,9 @@ function scroll() {
       $('.form__submit').prop('disabled', false);
       scroll()
     })
+    .fail(function(){
+      alert('メッセージが送信できませんでした')
+      $('.form__submit').prop('disabled', false);
+    })
   })
 })
