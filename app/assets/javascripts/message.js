@@ -35,7 +35,6 @@ function scroll() {
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      console.log(html)
       $('.form__message').val('');
       $('.form__submit').prop('disabled', false);
       scroll()
