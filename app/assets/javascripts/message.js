@@ -31,7 +31,7 @@ $(function() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html);
+      $('.message').append(html);
       $('.form__message').val('');
       $('.form__submit').prop('disabled', false);
     })
