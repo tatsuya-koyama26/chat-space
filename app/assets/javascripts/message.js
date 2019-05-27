@@ -18,7 +18,7 @@ $(function() {
     return html;
   }
 function scroll() {
-  $('.message').animate({scrollTop: $('.message')[0].scrollHeight});
+  $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
 }
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
@@ -34,14 +34,14 @@ function scroll() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.message').append(html);
+      $('.messages').append(html);
+      console.log(html)
       $('.form__message').val('');
       $('.form__submit').prop('disabled', false);
       scroll()
     })
     .fail(function(){
-      alert('メッセージが送信できませんでした')
-      $('.form__submit').prop('disabled', false);
+      alert('メッセージが送信できませんでした');
     })
   })
 })
