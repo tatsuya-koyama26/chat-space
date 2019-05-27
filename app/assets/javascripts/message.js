@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   function buildHTML(message){
     var html = `<div class="message">
                   <div class="upper-message">
@@ -35,7 +35,7 @@ function scroll() {
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.form__message')[0].reset();
+      $('.form__message').val('');
       $('.form__submit').prop('disabled', false);
       scroll()
     })
