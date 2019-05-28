@@ -8,7 +8,8 @@
           = @group.name
         .user
           Members: 
-          = @group.users.name
+          - @group.users.each do |user|
+            = user.name
       .main-header__right
         .edit-btn
           = link_to "Edit", edit_group_path(@group)
