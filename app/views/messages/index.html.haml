@@ -10,7 +10,8 @@
           Members: 
           = @group.users.name
       .main-header__right
-        %a.edit-btn Edit
+        .edit-btn
+          = link_to "Edit", edit_group_path(@group)
     .messages
       = render @messages
     .form
