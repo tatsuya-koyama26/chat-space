@@ -8,22 +8,13 @@
         %p.user Members: test
       .main-header__right
         %a.edit-btn Edit
-    .chat-body
-      %ul.chat-contents
-        %li.chat-content
-          .chat-content__name
-            %p test
-          .chat-content__time
-            %p test
-          .chat-content__message
-            %p test
-    .chat-footer
-      .chat-footer__messagebody
-        .chat-footer__messagebody__text
-          %textarea{ placeholder: 'type a message' }
-        .chat-footer__messagebody__image
-          %label
+    .messages
+      = render @messages
+    .form
+      = form_for [@group, @message],id: "new_message" do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
-            %input.hidden{type: 'file'}
-      .chat-footer__send
-        %a.send-btn Send
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
