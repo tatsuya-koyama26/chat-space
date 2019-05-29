@@ -3,7 +3,7 @@ $(function(){
   function buildHTML(message){
     var image = "";
     image = (message.image) ? `<img class="lower-message__image" src="${ message.image }">`: "";
-    var html = `<div class="message">
+    var html = `<div class="message" data-id="${ message.id }">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${ message.user_name }
@@ -65,6 +65,6 @@ function scroll() {
       console.log('error');
     });
   };
-  setInterval(reloadMessages, 12225000);
+  setInterval(reloadMessages, 5000);
 })
 })
