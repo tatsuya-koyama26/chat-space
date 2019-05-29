@@ -4,10 +4,15 @@
   .chat-main
     .main-header
       .main-header__left-box
-        %h2.group test
-        %p.user Members: test
+        .group
+          = @group.name
+        .user
+          Members: 
+          - @group.users.each do |user|
+            = user.name
       .main-header__right
-        %a.edit-btn Edit
+        .edit-btn
+          = link_to "Edit", edit_group_path(@group)
     .messages
       = render @messages
     .form
