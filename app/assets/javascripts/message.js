@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+$(function(){
   function buildHTML(message){
     var image = "";
     image = (message.image) ? `<img class="lower-message__image" src="${ message.image }">`: "";
@@ -46,4 +47,24 @@ function scroll() {
       alert('メッセージが送信できませんでした');
     })
   })
+  var reloadMessages = function() {
+    last_message_id = $('.messages').last().data('id')
+    $.ajax({
+      url: 'api/messages',
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      messages.forEach(function(massage){
+        var insertHTML = '';
+        $('.message').append(insertHTML)
+      })
+    })
+    .fail(function() {
+      console.log('error');
+    });
+  };
+  setInterval(reloadMessages, 12225000);
+})
 })
