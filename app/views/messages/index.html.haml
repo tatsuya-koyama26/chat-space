@@ -13,7 +13,7 @@
       .main-header__right
         .edit-btn
           = link_to "Edit", edit_group_path(@group)
-    .messages{data: {id: message.id}}
+    .messages
       = render @messages
     .form
       = form_for [@group, @message],id: "new_message" do |f|

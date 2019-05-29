@@ -48,7 +48,7 @@ function scroll() {
     })
   })
   var reloadMessages = function() {
-    last_message_id = $('.messages').last().data('id')
+    last_message_id = $('.message').last().data('id')
     $.ajax({
       url: 'api/messages',
       type: 'get',
