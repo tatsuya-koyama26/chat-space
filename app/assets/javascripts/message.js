@@ -16,13 +16,13 @@ $(function(){
                     <p class="lower-message__content">
                       ${ message.content }
                     </p>
-                    ${image}
+                    ${ image }
                   </div>
                 </div>`;
     return html;
   }
 function scroll() {
-  $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+  $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
 }
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
@@ -49,16 +49,22 @@ function scroll() {
   })
   var reloadMessages = function() {
     last_message_id = $('.message').last().data('id')
+    var path = location.pathname.split('/');
+    var path_id = path[2];
     $.ajax({
-      url: 'api/messages',
+      url: `/groups/${path_id}/api/messages`,
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      messages.forEach(function(massage){
-        var insertHTML = '';
-        $('.message').append(insertHTML)
+      var insertHTML = '';
+      messages.forEach(function(message){
+        if (message.id > last_message_id){
+          insertHTML += buildHTML(message);
+          $('.message').append(insertHTML)
+          scroll()
+        }
       })
     })
     .fail(function() {
