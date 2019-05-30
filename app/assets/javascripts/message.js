@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function() {
   $(function(){
     function buildHTML(message){
-      var image = "";
       image = (message.image) ? `<img class="lower-message__image" src="${ message.image }">`: "";
       var html = `<div class="message" data-id="${ message.id }">
                     <div class="upper-message">
@@ -69,7 +68,7 @@ $(document).on('turbolinks:load', function() {
         })
       })
       .fail(function() {
-        console.log('error');
+        alert('error');
       })
     };
     if(location.href.match(/\/groups\/\d+\/messages/)){
