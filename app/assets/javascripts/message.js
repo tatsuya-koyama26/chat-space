@@ -72,7 +72,7 @@ $(document).on('turbolinks:load', function() {
         alert('error');
       })
     };
-    if(location.href.match(/\/groups\/\d+\/messages/)){
+    if(location.href.match(/\/messages/)){
       setInterval(reloadMessages, 5000);
     }
   })
