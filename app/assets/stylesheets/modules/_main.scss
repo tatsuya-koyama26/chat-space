@@ -42,6 +42,10 @@
       font-size: 14px;
       border: 2px solid;
       text-align: center;
+      .edit{
+        color: $light_blue;
+        text-decoration: none;
+      }
     }
   }
 }
