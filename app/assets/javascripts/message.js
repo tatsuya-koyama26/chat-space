@@ -51,9 +51,8 @@ $(document).on('turbolinks:load', function() {
       last_message_id = $('.message').last().data('id')
       var path = location.pathname.split('/');
       var path_id = path[2];
-      var url = `/groups/${path_id}/api/messages`
       $.ajax({
-        url: url,
+        url: `/groups/${path_id}/api/messages`,
         type: 'get',
         dataType: 'json',
         data: {id: last_message_id}
@@ -72,7 +71,7 @@ $(document).on('turbolinks:load', function() {
         alert('error');
       })
     };
-    if(location.href.match(/\/messages/)){
+    if(location.href.match(/\/groups\/\d+\/messages/)){
       setInterval(reloadMessages, 5000);
     }
   })
