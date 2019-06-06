@@ -12,7 +12,7 @@
   .chat-group
     - current_user.groups.each do |group|
       = link_to group_messages_path(group) do
-        .chat-group__name
+        .chat-group__name.group
           = group.name
-        .chat-group__message
+        .chat-group__message.group
           メッセージはまだありません
