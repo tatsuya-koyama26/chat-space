@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+
   $(function(){
     function buildHTML(message){
       var image = (message.image) ? `<img class="lower-message__image" src="${ message.image }">`: "";
@@ -36,7 +37,6 @@ $(document).on('turbolinks:load', function() {
         contentType: false
       })
       .done(function(data){
-
         var html = buildHTML(data);
         $('.messages').append(html);
         $('.new_message')[0].reset();
@@ -47,7 +47,9 @@ $(document).on('turbolinks:load', function() {
         alert('メッセージが送信できませんでした');
       })
     })
+  $(function(){
     var reloadMessages = function() {
+      if(location.href.match(/\/groups\/\d+\/messages/)){
       last_message_id = $('.message').last().data('id')
       var path = location.pathname.split('/');
       var path_id = path[2];
@@ -70,9 +72,9 @@ $(document).on('turbolinks:load', function() {
       .fail(function() {
         alert('error');
       })
+      }
     };
-    if(location.href.match(/\/groups\/\d+\/messages/)){
       setInterval(reloadMessages, 5000);
-    }
+  })
   })
 })
