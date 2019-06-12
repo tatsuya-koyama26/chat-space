@@ -6,6 +6,13 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
+  &__input {
+    float: left;
+    width: 100%;
+    line-height: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
   h1 {
     letter-spacing: 2px;
@@ -51,6 +58,7 @@
     &--left {
       float: left;
       width: 30%;
+      padding-top: 20px;
       padding-right: 20px;
       padding-left: 20px;
       box-sizing: border-box;
@@ -66,14 +74,6 @@
       line-height: 50px;
       font-weight: bold;
       text-align: right;
-    }
-
-    &__input {
-      float: left;
-      width: 100%;
-      line-height: 30px;
-      padding: 10px 15px;
-      box-sizing: border-box;
     }
   }
 
