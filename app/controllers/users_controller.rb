@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.where('name LIKE(?)',"%#{params[:keyword]}%").where.not(id: added_users)
+    @users = User.where('name LIKE(?)',"%#{params[:keyword]}%").where.not(id: current_user.id)
     respond_to do |format|
       format.json
     end
@@ -23,15 +23,15 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email)
   end
-
-  def added_users
-    added_users = []
-    added_users << current_user.id
-    if params[:id]
-      params[:id].map do |user_id|
-        added_users << user_id.to_i
-      end
-    end
-      return added_users
-  end
 end
+
+  # def added_users
+  #   added_users = []
+  #   added_users << current_user.id
+  #   if params[:id]
+  #     params[:id].map do |user_id|
+  #       added_users << user_id.to_i
+  #     end
+  #   end
+  #     return added_users
+  # end
