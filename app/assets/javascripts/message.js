@@ -64,7 +64,7 @@ $(document).on('turbolinks:load', function() {
         messages.forEach(function(message){
           if (message.id > last_message_id){
             insertHTML += buildHTML(message);
-            $('.message').append(insertHTML)
+            $('.messages').append(insertHTML)
             scroll()
           }
         })
