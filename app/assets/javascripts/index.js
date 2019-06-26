@@ -24,7 +24,7 @@ $(document).on('turbolinks:load', function(){
               </div>`;
   member_list.append(html);
   }
-  $("#user-search-field").on("keyup", function() {
+  $("#user-search-field").on("input", function() {
     var input = $("#user-search-field").val();
     $.ajax({
       type: 'GET',
