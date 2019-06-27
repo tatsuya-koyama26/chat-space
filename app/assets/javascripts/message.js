@@ -50,7 +50,7 @@ $(document).on('turbolinks:load', function() {
   $(function(){
     var reloadMessages = function() {
       if(location.href.match(/\/groups\/\d+\/messages/)){
-      last_message_id = $('.message').last().data('id')
+      last_message_id = $('.message').last().data('id') || 0
       var path = location.pathname.split('/');
       var path_id = path[2];
       $.ajax({
