@@ -4,6 +4,9 @@
       = message.user.name
     .upper-message__date
       = message.created_at.strftime("%Y/%m/%d %H:%M")
+    %ul.upper-message__info-menu
+      %li
+        = fa_icon 'times'
   .lower-meesage
     - if message.content.present?
       %p.lower-message__content
